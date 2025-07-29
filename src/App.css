@@ -1,42 +1,40 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 1rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.block {
+	border: 1px black solid;
+	border-radius: 10px;
+	padding: 10px;
+	min-width: 300px;
+	margin-bottom: 20px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile__btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.profile__btn button {
+	margin-bottom: 5px;
 }
-
-.card {
-  padding: 2em;
+.profile__btn button:last-child {
+	margin: 0;
 }
-
-.read-the-docs {
-  color: #888;
+.list__btn {
+	display: flex;
+	flex-direction: column;
+}
+.cart__info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.basket__btn button:last-child {
+	margin-left: 10px;
+}
+.basket__btn button:first-child {
+	width: 40px;
 }

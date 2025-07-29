@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './App.css'
 
 const Profile = () => {
 	const [user, setUser] = useState({
@@ -7,24 +8,31 @@ const Profile = () => {
 		isActive: true,
 	})
 	const nameChangeClick = () => {
-		setUser({ ...user, name: 'Игорь' })
+		const name = user.name == 'Игорь' ? 'Иван' : 'Игорь'
+		setUser({ ...user, name })
 	}
 	const ageChangeClick = () => {
-		setUser({ ...user, age: 26 })
+		const age = ++user.age
+		setUser({ ...user, age })
 	}
 	const activeChangeClick = () => {
-		setUser({ ...user, isActive: false })
+		const isActive = !user.isActive
+		setUser({ ...user, isActive })
 	}
 	return (
-		<>
-			<p>{user.name}</p>
-			<p>{user.age}</p>
-			<p>Активность: {user.isActive ? 'Да' : 'Нет'}</p>
-			<button onClick={nameChangeClick}>Сменить имя</button>
-			<button onClick={ageChangeClick}>Увеличить возраст</button>
+		<div className='block'>
+			<h3>Профиль пользователя</h3>
+			<p>Имя: {user.name}</p>
+			<p>Возраст: {user.age}</p>
+			<p>Активность: {user.isActive ? 'да' : 'нет'}</p>
+			<div className='profile__btn'>
+				<button onClick={nameChangeClick}>Сменить имя</button>
+				<button onClick={ageChangeClick}>Увеличить возраст</button>
+				<button onClick={activeChangeClick}>Переключить активность</button>
+			</div>
 			<br />
-			<button onClick={activeChangeClick}>Переключить активность</button>
-		</>
+			<br />
+		</div>
 	)
 }
 
