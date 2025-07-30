@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import './App.css'
 const tasksRu = [
 	'Фильтровать строки',
@@ -22,7 +22,9 @@ const tasksRu = [
 	'Извлечь данные',
 	'Развернуть массив',
 ]
-const List = () => {
+const TaskItem = () => {
+	  console.log("TaskItem");
+
 	const [tasks, setTasks] = useState(['Купить хлеб', 'Погулять с собакой'])
 	const addTask = () => {
 		tasksRu.map(item => setTasks([...tasks, item]))
@@ -42,7 +44,7 @@ const List = () => {
 				))}
 			</ul>
 
-			<div className='list__btn'>
+			<div className='task__btn'>
 				<button onClick={addTask}>Добавить задачу</button>
 				<button onClick={removeTask}>Удалить последнюю задачу</button>
 			</div>
@@ -50,4 +52,4 @@ const List = () => {
 	)
 }
 
-export default List
+export default memo(TaskItem)

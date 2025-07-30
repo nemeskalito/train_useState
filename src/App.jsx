@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import Profile from './Profile'
-import './App.css'
-import List from './List'
-import Basket from './Basket'
+import { useState } from "react";
+import "./App.css";
+import UserInfo from "./UserInfo";
+import TaskItem from "./TaskItem";
+import CartItem from "./CartItem/CartItem";
 
 function App() {
-	return (
-		<>
-			<Profile />
-			<List />
-			<Basket />
-		</>
-	)
+  return (
+    <>
+      <UserInfo />
+      <TaskItem />
+      <CartItem />
+    </>
+  );
 }
 
-export default App
+export default App;
